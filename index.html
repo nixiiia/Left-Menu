@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+
+            <button class="showButton" onclick="checkLeftMenu()">
+                <svg class="showButton__img" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle id="circle" cx="15" cy="15" r="14" fill="#3E4A51" stroke="#E9EEF2" />
+                    <path id="path" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M22.6971 20.9184C22.9129 20.807 23.0408 20.5517 22.988 20.3374C22.9625 20.2339 22.0127 19.1083 20.6633 17.5824L18.3817 15.0024L20.6636 12.419C22.002 10.9037 22.9632 9.76372 22.9883 9.6616C23.0408 9.4484 22.9124 9.19277 22.6971 9.08164C22.5849 9.02375 22.0765 9.0016 20.8422 9.00096L19.1418 9L18.9528 9.16232C18.6185 9.44923 14.0346 14.6775 13.9735 14.8416C13.9365 14.9408 13.9365 15.0592 13.9735 15.1584C14.0346 15.3225 18.6185 20.5508 18.9528 20.8377L19.1418 21L20.8422 20.999C22.0765 20.9984 22.5849 20.9763 22.6971 20.9184ZM15.7514 20.9184C15.9663 20.8074 16.095 20.5516 16.0427 20.339C16.0178 20.2379 15.0618 19.1029 13.7491 17.6159C12.5111 16.2136 11.4982 15.0364 11.4982 15C11.4982 14.9636 12.5111 13.7864 13.7491 12.3841C15.0618 10.8971 16.0178 9.76213 16.0427 9.66096C16.095 9.4484 15.9663 9.19264 15.7514 9.08164C15.6392 9.02375 15.1308 9.0016 13.8965 9.00096L12.1961 9L12.0071 9.16232C11.6727 9.44923 7.08887 14.6775 7.02774 14.8416C6.99076 14.9408 6.99076 15.0592 7.02774 15.1584C7.08887 15.3225 11.6727 20.5508 12.0071 20.8377L12.1961 21L13.8965 20.999C15.1308 20.9984 15.6392 20.9763 15.7514 20.9184Z"
+                        fill="#E9EEF2" />
+                </svg>
+            </button>
+
+            <a href="http://127.0.0.1:8000/" class="logo">
+                <img src="media/short_logo.svg" class="logo__img"
+                    onerror="this.src='/static/main_site/images/short_logo.svg';">
+            </a>
+
+        </div>
+    </header>
+
+    <div class="wrapper">
+
+        <aside class="sidebar">
+            <div class="sidebar__inner">
+
+                <ul class="menu__list">
+
+
+                    <li class="menu__item">
+                        <a href="http://127.0.0.1:8000/planner" class="menu__link" id="aPlan">
+                            <img src="media/plannerLogo.svg" class="menu__img" data-original-title="Планировщик"
+                                title="Планировщик">
+                            <h2 class="menu__subtitle" id="planH">Планировщик</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="aCRM">
+                        <a href="http://127.0.0.1:8000/crm" class="menu__link">
+                            <img title="CRM" src="media/CRMlogo.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="crmH">CRM</h2>
+                        </a>
+                        <button class="menu__btn">
+                            <img src="media/arrowOpen.svg">
+                        </button>
+                        <ul class="sub-menu" id="crmDop">
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/crm" class="sub-item__link">Сделки</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/company" class="sub-item__link">Компании</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/contacts" class="sub-item__link">Контакты</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/objects" class="sub-item__link">Объекты</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/contracts" class="sub-item__link">Договоры</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/commercial_offers" class="sub-item__link">Коммерческие
+                                    <br>
+                                    предложения</a>
+                                <a class="sub-item__plus" title="Создать"
+                                    href="http://127.0.0.1:8000/create_commercial_offers">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/commercial_accounts" class="sub-item__link">Счета</a>
+                                <a class="sub-item__plus" title="Создать"
+                                    href="http://127.0.0.1:8000/create_commercial_accounts">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/certificate_of_completed_works"
+                                    class="sub-item__link">Акты
+                                    выполненных работ</a>
+                                <a class="sub-item__plus" title="Создать"
+                                    href="http://127.0.0.1:8000/create_certificate_of_completed_works">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu__item" id="aWarehouse">
+                        <a href="http://127.0.0.1:8000/purchases" class="menu__link">
+                            <img title="Склад" src="media/warehouseLogo.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="warehouseH">Склад</h2>
+                        </a>
+                        <button class="menu__btn">
+                            <img src="media/arrowOpen.svg">
+                        </button>
+                        <ul class="sub-menu" id="warehouseDop">
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/purchases" class="sub-item__link">Закупки</a>
+                            </li>
+
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/sales" class="sub-item__link">Продажи</a>
+                            </li>
+
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/warehouse" class="sub-item__link">Товары</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="menu__item">
+                        <a href="http://127.0.0.1:8000/tools_list" class="menu__link" id="aTools">
+                            <img title="Инструменты" src="media/toolsLogo.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="toolsH">Инструменты</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="aHD">
+                        <a href="http://127.0.0.1:8000/help_desk" class="menu__link">
+                            <img title="Help Desk" src="media/HDlogo.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="hdH">Help Desk</h2>
+                        </a>
+                        <button class="menu__btn">
+                            <img src="media/arrowOpen.svg">
+                        </button>
+                        <ul class="sub-menu" id="hdDop">
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk" class="sub-item__link">Заявки</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk?calendar=true"
+                                    class="sub-item__link">Календарь</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk?company=true"
+                                    class="sub-item__link">Компании</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk?users=true"
+                                    class="sub-item__link">Пользователи</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk?reports=true" class="sub-item__link">Отчёты</a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/help_desk?technic=true" class="sub-item__link">Парк
+                                    техники</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu__item" id="aFinance">
+                        <a href="http://127.0.0.1:8000/finance/" class="menu__link">
+                            <img title="Финансы" src="media/finances.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="iFinance">Финансы</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="aAnalytics">
+                        <a href="http://127.0.0.1:8000/analytics/" class="menu__link">
+                            <img title="Аналитика" src="media/analytics.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="iAnalytics">Аналитика</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="aknowBase">
+                        <a href="http://127.0.0.1:8000/base/" class="menu__link">
+                            <img title="База знаний" src="media/knowledge.svg" class="menu__img">
+                            <h2 class="menu__subtitle" id="knowBase">База знаний</h2>
+                        </a>
+                    </li>
+
+                    <hr class="line">
+                    </hr>
+
+                    <li class="menu__item">
+                        <a href="" class="menu__link" title="Уведомления">
+                            <div class="menu__notifications">
+                                <img class="menu__img-smaller" src="./media/notification.svg" alt="">
+                                <span class="notifications-count" id="notifications"></span>
+                            </div>
+                            <h2 class="menu__subtitle">Уведомления</h2>
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="" class="menu__link" title="Согласования">
+                            <div class="menu__notifications">
+                                <img class="menu__img-smaller" src="./media/approvals.svg" alt="">
+                                <span class="notifications-count" id="approvals"></span>
+                            </div>
+                            <h2 class="menu__subtitle">Согласования</h2>
+                        </a>
+
+                    </li>
+
+                    <li class="menu__item" id="system_manual">
+                        <a href="http://127.0.0.1:8000/manual" class="menu__link">
+                            <img src="media/manual_icon.svg" alt="manual_icon" title="Документация"
+                                class="menu__img-smaller">
+                            <h2 class="menu__subtitle" id="manualH">Документация</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="settings_menu">
+                        <a class="menu__link" href="http://127.0.0.1:8000/settings">
+                            <img title="Настройки" src="media/settingsLogo.svg" class="menu__img-smaller">
+                            <h2 class="menu__subtitle" id="settingsH">Настройки</h2>
+                        </a>
+                    </li>
+
+                    <li class="menu__item" id="update_list">
+                        <a class="menu__link" href="http://127.0.0.1:8000/update_list">
+                            <img title="Список обновлений" src="media/update_list.svg" class="menu__img-smaller">
+                            <h2 class="menu__subtitle subtitle-wrap" id="updateH">Список обновлений</h2>
+                        </a>
+                    </li>
+
+                    <hr class="line">
+                    </hr>
+
+
+                    <li class="menu__item" id="usList">
+                        <a href="http://127.0.0.1:8000/all_user_list" class="menu__link">
+                            <img title="Пользователи" src="media/userListlogo.svg" class="menu__img-smaller">
+                            <h2 class="menu__subtitle" id="usersH">Пользователи</h2>
+                        </a>
+
+                        <a class="item__plus" href="/add_user_page';" title="Создать">
+                            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                        <ul class="sub-menu" id="userListDop">
+
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/all_user_list" class="sub-item__link">Полный список</a>
+                            </li>
+                            <li class="sub-item">
+                                <div class="sub-item__link" onclick="open_users_list()">Быстрый просмотр</div>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                    <li class="menu__item" id="aTask" onclick="redirectTo('/tasks_all_list')">
+                        <div class="menu__link">
+                            <img title="Задачи" src="media/taskListLogo.svg" class="menu__img-smaller"
+                                id="taskListLogo">
+                            <h2 class="menu__subtitle" id="taskH">Задачи</h2>
+                        </div>
+                        <button class="menu__btn">
+                            <img src="media/arrowOpen.svg">
+                        </button>
+                        <ul class="sub-menu" id="taskDop">
+                            <li class="sub-item">
+                                <a onclick="planner__open_task_list(event)" class="sub-item__link">Быстрый просмотр</a>
+                                <a class="sub-item__plus" title="Создать" onclick="open_new_task()">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+                            <li class="sub-item">
+                                <a href="http://127.0.0.1:8000/tasks_all_list" class="sub-item__link">Список задач</a>
+                                <a class="sub-item__plus" title="Создать" onclick="open_new_task()">
+                                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M4 8C6.20914 8 8 6.20914 8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8ZM0.939938 4.14C1.03527 4.228 1.14527 4.272 1.26994 4.272H3.40394C3.46994 4.272 3.50294 4.305 3.50294 4.371V6.505C3.50294 6.64433 3.5506 6.76167 3.64594 6.857C3.74127 6.95233 3.8586 7 3.99794 7C4.13727 7 4.2546 6.95233 4.34994 6.857C4.44527 6.76167 4.49294 6.64433 4.49294 6.505V4.371C4.49294 4.305 4.52594 4.272 4.59194 4.272H6.72594C6.8506 4.272 6.95694 4.228 7.04494 4.14C7.14027 4.04467 7.18794 3.93467 7.18794 3.81C7.18794 3.68533 7.14027 3.579 7.04494 3.491C6.95694 3.39567 6.8506 3.348 6.72594 3.348H4.59194C4.52594 3.348 4.49294 3.315 4.49294 3.249V1.115C4.49294 0.975666 4.44527 0.858333 4.34994 0.763C4.2546 0.667666 4.13727 0.62 3.99794 0.62C3.8586 0.62 3.74127 0.667666 3.64594 0.763C3.5506 0.858333 3.50294 0.975666 3.50294 1.115V3.249C3.50294 3.315 3.46994 3.348 3.40394 3.348H1.26994C1.14527 3.348 1.03527 3.39567 0.939938 3.491C0.851938 3.579 0.807938 3.68533 0.807938 3.81C0.807938 3.93467 0.851938 4.04467 0.939938 4.14Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="menu__item">
+                        <a class="menu__link" onclick="open_send_error()">
+                            <img class="menu__img-smaller" src="media/error_message.svg" alt="">
+                            <h2 class="menu__subtitle">Сообщить об <br>
+                                ошибке</h2>
+                        </a>
+                    </li>
+
+                    <script>
+                        function redirectTo(url) {
+                            window.location.href = url;
+                        }
+                    </script>
+
+
+
+                    <li class="menu__item menu__toggle">
+                        <div class="toggle">
+                            <input class="toggle__checkbox" id="toggle-menu" type="checkbox" name="toggle-menu"
+                                onclick="setDefaultMenuState()">
+                            <label class="toggle__label" for="toggle-menu"></label>
+                        </div>
+                        <label for="toggle-menu">
+                            <h2 class="menu__subtitle" id="nameH">Всегда скрыт</h2>
+                        </label>
+
+                    </li>
+
+
+                    <li class="menu__item menu__item-account" id="aPers">
+                        <a href="http://127.0.0.1:8000/user_page/9" class="menu__link">
+                            <img class="menu__avatar" src="" alt="">
+                            <h2 class="menu__subtitle" id="nameH"></h2>
+                        </a>
+
+                        <a href="http://127.0.0.1:8000/logout" class="logout__link" id="hLogout">
+                            <img src="media/logoutLogo.svg">
+                            <h2 class="menu__subtitle">Выйти</h2>
+                        </a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="main__inner">
+                <p>КОНТЕНТ</p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Проверка на тип устройства для адаптации меню -->
+    <script>
+        let isMobile = {
+            Android: function () { return navigator.userAgent.match(/Android/i); },
+            BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); },
+            IOS: function () { return navigator.userAgent.match(/IPhone|IPad|IPod/i); },
+            Opera: function () { return navigator.userAgent.match(/Opera mini/i); },
+            Windows: function () { return navigator.userAgent.match(/IEMobile/i); },
+            any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.IOS() || isMobile.Opera() || isMobile.Windows()) }
+        }
+
+        const body = document.querySelector('body');
+        if (isMobile.any()) {
+            body.classList.add('touch');
+            const arrow = document.querySelectorAll('.menu__btn')
+            for (i = 0; i < arrow.length; i++) {
+
+                const thisLink = arrow[i].previousElementSibling;
+                const subMenu = arrow[i].nextElementSibling;
+                const thisArrow = arrow[i];
+
+
+                arrow[i].addEventListener('click', function () {
+                    subMenu.classList.toggle('open')
+                })
+            }
+
+        } else {
+            body.classList.add('mouse')
+        }
+    </script>
+
+
+    <!-- Логика отображения новых уведомлений и согласований, с проверкой
+     (если новых нет, то не ярлык отображается) -->
+    <script>
+        function updateNotificationCount(count) {
+            const notificationsCount = document.getElementById('notifications');
+            if (count > 0) {
+                notificationsCount.textContent = count;
+                notificationsCount.classList.remove('notifications-count-empty')
+            } else {
+                notificationsCount.classList.add('notifications-count-empty')
+            }
+
+        }
+
+        function updateApprovalCount(count) {
+            const approvalCount = document.getElementById('approvals');
+            if (count > 0) {
+                approvalCount.textContent = count;
+                approvalCount.classList.remove('notifications-count-empty')
+            } else {
+                approvalCount.classList.add('notifications-count-empty')
+            }
+        }
+
+        // Сюда передаем данные об уведомлениях
+
+        updateNotificationCount(5);
+        updateApprovalCount(48);
+
+    </script>
+
+    <!-- Скрытие и раскрытие левого меню -->
+    <!-- Логика для тоггла на вечное скрытие/раскрытие левого меню -->
+    <script>
+
+        const sidebar = document.querySelector('.sidebar');
+        const hideSubtitle = document.querySelectorAll('.menu__subtitle');
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const isCollapsed = localStorage.getItem('isCollapsed') === 'true';
+            document.getElementById('toggle-menu').checked = isCollapsed;
+
+            if (isCollapsed) {
+                sidebar.classList.add('sidebar-small')
+                hideSubtitle.forEach(sub => sub.classList.add('hide__subtitle'))
+            } else {
+                sidebar.classList.remove('sidebar-small')
+                hideSubtitle.forEach(sub => sub.classList.remove('hide__subtitle'))
+            }
+        })
+
+        function checkLeftMenu() {
+
+            const hideBtn = document.querySelector('.showButton');
+            const menuItem = document.querySelectorAll('.menu__item');
+            const menuLink = document.querySelectorAll('.menu__link');
+            const subMenu = document.querySelector('.sub-menu');
+
+            hideBtn.classList.toggle('hideBtn');
+            sidebar.classList.toggle('sidebar-small');
+
+            hideSubtitle.forEach(sub => sub.classList.toggle('hide__subtitle'))
+        }
+
+        function setDefaultMenuState() {
+            const checkbox = document.getElementById('toggle-menu')
+            localStorage.setItem('isCollapsed', checkbox.checked);
+
+            if (checkbox.checked) {
+                sidebar.classList.add('sidebar-small')
+                hideSubtitle.forEach(sub => sub.classList.add('hide__subtitle'))
+            } else {
+                sidebar.classList.remove('sidebar-small')
+                hideSubtitle.forEach(sub => sub.classList.remove('hide__subtitle'))
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
